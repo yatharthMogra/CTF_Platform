@@ -1,0 +1,30 @@
+{
+  "name": "ctf_platform",
+  "version": "1.0.0",
+  "description": "CTF in Groups",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yatharthMogra/CTF_Platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yatharthMogra/CTF_Platform/issues"
+  },
+  "homepage": "https://github.com/yatharthMogra/CTF_Platform#readme",
+  "dependencies": {
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1"
+  }
+}
