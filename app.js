@@ -3,6 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
+const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const passport = require('passport')
 const session = require('express-session')
@@ -38,6 +39,22 @@ if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
 
+// Handlebars helpers
+const { checkAdmin } = require('./helpers/hbs')
+
+// Handlebars
+app.engine(
+    '.hbs', 
+    exphbs({
+        helpers: {
+            checkAdmin
+        }, 
+        defaultLayout: 'main', 
+        extname: '.hbs',
+    })
+)
+app.set('view engine', '.hbs');
+
 // Sessions middleware
 app.use(session({
     secret: 'keyboard cat',
@@ -61,6 +78,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use('/', require('./routes/index'))
+app.use('/auth', require('./routes/auth'))
+app.use('/team', require('./routes/team'))
+app.use('/email69420', require('./routes/email'))
 
 const PORT = process.env.PORT || 3000
 

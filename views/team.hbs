@@ -1,0 +1,33 @@
+
+<h3 class="h44">This is team : {{displayName}}</h3>
+<div class="fixed-action-btn">
+        
+</div>
+
+<div class="row">
+    {{#each members}}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                
+            </div>
+            <div class="card-content center-align">
+                <h4>
+                    
+                    {{firstName}}
+                </h4>
+                <h5></h5>
+                <p>member</p>
+                <br>
+                <div class="card-image circle ">
+                    <img src="{{image}}" alt="">
+                    {{!-- <a href="/questions/user/{{user._id}}">{{user.firstName}}</a> --}}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+
