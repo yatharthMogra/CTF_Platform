@@ -1,0 +1,31 @@
+<h5 class="h44">Ranklist</h5>
+<h4 class="h44">Welcome {{name}}
+    <div class="chip right">
+        <img src="{{img}}" alt="">{{name}}
+    </div>
+</h4>
+
+{{#if users}}
+  {{#each users}}
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <img src="{{image}}" alt="" class="circle">
+          <span class="title"><b>{{displayName}}</b></span>
+          <p> Score - {{score}} <br>
+              Penalty - {{penalty}}
+              {{#if members}}
+              {{#each members}}
+              <div class="chip ">
+              <img src="{{image}}" alt="">{{firstName}}
+              </div>
+              {{/each}}
+              {{else}}
+              {{/if}}
+          </p>
+          <div class="secondary-content">Rank {{ @index}}</div>
+        </li>
+      </ul>
+  {{/each}}
+{{else}}
+    <p class="h44">There are no Teams!!!</p>
+{{/if}}

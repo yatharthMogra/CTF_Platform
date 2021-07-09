@@ -40,7 +40,7 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 // Handlebars helpers
-const { checkAdmin, formatDate, stripTags, truncate, editIcon, questionStatus, lockIcon, worldStatus, submitStatus, inc} = require('./helpers/hbs')
+const { checkAdmin, formatDate, stripTags, truncate, editIcon, questionStatus, lockIcon, worldStatus, qImage, qAudio, qVideo, submitStatus, inc, wImage} = require('./helpers/hbs')
 
 // Handlebars
 app.engine(
@@ -55,8 +55,12 @@ app.engine(
             questionStatus,
             lockIcon,
             worldStatus,
+            qImage,
+            qAudio,
+            qVideo,
             submitStatus,
             inc,
+            wImage,
         }, 
         defaultLayout: 'main', 
         extname: '.hbs',
@@ -90,7 +94,9 @@ app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/worlds', require('./routes/worlds'))
 app.use('/questions', require('./routes/questions'))
+app.use('/ranklist', require('./routes/ranklist'))
 app.use('/answers', require('./routes/answers'))
+app.use('/calc', require('./routes/calc'))
 app.use('/team', require('./routes/team'))
 app.use('/email69420', require('./routes/email'))
 

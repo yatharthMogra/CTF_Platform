@@ -83,4 +83,86 @@ module.exports = {
             return `<a class="btn-floating halfway-fa grey"><i class="fa fa-lock"></i></a>`
         }
     },
+    qImage: function (question) {
+        let ans = `
+        <div class="card" id="carousel">
+            <div class="carousel carousel-slider center">
+        `
+        for (let i = 1; i <= question.imageNo; i++) {
+            let imge = question.worldNumber+'_'+question.questionNo+'_'+i
+            ans+= `
+            <div class="carousel-item red" href="#one!">
+                <img class="imgg" src="/img/${imge}.jpg" >
+            </div>
+            `
+        }
+        ans+= `
+            </div>
+        </div>
+        `
+        if(question.imageNo > 0){
+            return ans
+        }
+        else{
+            return ``
+        }
+    },
+    wImage: function (worldNo) {
+        let ans = `<img class="background-image" src="/img/${worldNo}.png">`
+        return ans
+    },
+    qAudio: function (question) {
+        if (question.audioNo == 1){
+            if(question.worldNumber == 3 && question.questionNo == 1){
+                let aud = 'ALAPMIEMAT'
+                return `
+                    <div class="card">
+                        <audio controls>
+                            <source src="/audio/${aud}.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    `
+            }
+            else if(question.worldNumber == 3 && question.questionNo == 3){
+                let aud = 'DEEPSOUND'
+                return `
+                    <div class="card">
+                        <audio controls>
+                            <source src="/audio/${aud}.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    `
+            }
+        let aud = question.worldNumber+'_'+question.questionNo
+        return `
+            <div class="card">
+                <audio controls>
+                    <source src="/audio/${aud}.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            `
+        }
+        else{
+            return ``
+        }
+    },
+    qVideo: function (question) {
+        if (question.videoNo == 1){
+        let vid = question.worldNumber+'_'+question.questionNo
+        return `
+        <div class="card">
+            <video width="400" controls>
+                <source src="/video/${vid}.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+            `
+        }
+        else{
+            return ``
+        }
+    },
 }
