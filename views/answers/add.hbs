@@ -1,0 +1,52 @@
+<h3>Add Answer</h3>
+<div class="row">
+    <form action="/answers" method="POST" class="col s12">
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="worldNumber" name="worldNumber" min="1" max="1000">
+                <label for="worldNumber">World Number</label>
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="input-field">
+                <input type="number" id="questionNo" name="questionNo" min="1" max="1000">
+                <label for="questionNo">Question Number</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="points" name="points" min="1" max="1000">
+                <label for="points">Points</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="penalty" name="penalty" min="0" max="1000">
+                <label for="penalty">Penalty</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="ansCount" name="ansCount" min="0" max="1000">
+                <label for="ansCount">No of Answers</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="ans" name="ans">
+                <label for="ans">Answer</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

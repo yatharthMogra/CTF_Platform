@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h3 style="text-align: center;" class="h44">{{question.title}}</h3>
+        <div class="card story">
+            <div class="card-content">
+                <span class="card-title center">Question : {{question.questionNo}}</span>
+                {{!-- <span >{{formatDate date 'MMMM Do YYYY, h:mm:ss a'}}</span> --}}
+                {{{question.body}}}
+            </div>
+        </div>
+        {{{qImage question}}}
+        {{{qVideo question}}}
+    </div>
+
+    {{!-- submit card --}}
+    <div class="col s12 m4">
+        <div class="card center-align">
+            {{{qAudio question}}}
+            <div class="card-content">
+                <span class="card-title">{{name}}</span>
+                <img src="{{img}}" class="circle responsive-img img-small" >
+            </div>
+            {{#if (submitStatus usrWSol usrQSol question.questionNo question.worldNumber)}}
+            <form action="/calc/{{question._id}}" method="POST" class="card-action">
+                <div class="row">
+                    <div class="input-field">
+                        <input type="hidden" id="person" name="person" value="{{userid}}">
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="ans" name="ans">
+                        <label for="ans">Type your Answer here ...</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="Save" class="btn blue">
+                    <a class="btn orange">Cancel</a>
+                </div>
+            </form>
+            {{else}}
+                <div class="card-action green">
+                    <p><strong>Successfully Completed!!!</strong></p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

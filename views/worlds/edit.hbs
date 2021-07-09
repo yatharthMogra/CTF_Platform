@@ -1,0 +1,39 @@
+<h3>Edit world</h3>
+<div class="row">
+    <form action="/worlds/{{world._id}}" method="POST" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="worldNumber" name="worldNumber" min="1" max="1000" value="{{world.worldNumber}}">
+                <label for="worldNumber">World Number</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="worldName" name="worldName" value="{{world.worldName}}">
+                <label for="worldName">World Title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="maxQues" name="maxQues" min="1" max="1000" value="{{world.maxQues}}">
+                <label for="maxQues">Number of questions in this world?</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <h5>World Info:</h5>
+                <textarea name="body" id="body">{{world.body}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
